@@ -144,4 +144,6 @@ I took a snapshot after each module so I can restore the lab if something breaks
   - Successfully joined CLIENT01 to the lab.local domain.
   - Signed in using the Active Directory user account lsmith.
   - Completed the required password change at first logon.
+
+![Domain Join of Client01](screenshots/30-client01-domain-join.png)
   
