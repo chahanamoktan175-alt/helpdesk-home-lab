@@ -12,6 +12,7 @@ A virtual IT environment built in VMware Workstation to practice help desk work.
 
 ## Module 0: Create the Server VM
 **What I did:** Created a Window Server 2022 virtual machine in VMware Workstation using a custom setup and manual attachment of the installation image.
+
 **Why:** Custom setup allows full control over the virtual hardware and installation, therefore, troubleshooting is made easy for the user.
 
 **Settings:** 2 cores, 4 GB RAM, 60 GB Virtual disk, NAT network, BIOS firmware.
@@ -26,14 +27,18 @@ A virtual IT environment built in VMware Workstation to practice help desk work.
 ![VMware Tools installation](screenshots/vmware-tool-installation.png)
 
 ## Module 1: Server Preparation
-**What I did:** Set the time zone to Mountain Time, renamed the server to DC01, and assigned a static IP address.
+**What I did:** Configured the server initial configuration by changing the time zone, renaming the computer name as DC01, and configuring a static IP address.
 
-**Why:** A domain controller needs a fixed name and IP address. Changing them after installing Active Directory causes problems.
+**Why:** The domain controller machine should be configured using a static host name and IP address, which enables easy discovery of its resources like AD and DNS. Once a computer is deployed in the network, changing the host name will cause networking problems.
 
-**Settings:** IP 192.168.205.10, mask 255.255.255.0, gateway 192.168.205.2, DNS 192.168.205.10 (itself) and 8.8.8.8.
+**Settings:** 
+IP Address: 192.168.205.10
+Subnet mask: 255.255.255.0 
+Gateway: 192.168.205.2 
+DNS: 192.168.205.10 and Alternate DNS: 8.8.8.8.
 
-**Result:** Ping tests to the server and to 8.8.8.8 succeeded with 0% loss. I took a snapshot as a restore point.
-
+**Result:** Tested the network configuration by doing a ping test on server and an alternate DNS (8.8.8.8). 
+Upon successful configuration, I took a VMware snapshot as a backup point.
 ![Network settings before](screenshots/06-ipconfig-before.png)
 ![Computer name](screenshots/07-computer-name.png)
 ![Static IP](screenshots/08-static-ip.png)
