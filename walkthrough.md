@@ -145,5 +145,9 @@ I took a snapshot after each module so I can restore the lab if something breaks
   - Signed in using the Active Directory user account lsmith.
   - Completed the required password change at first logon.
 
+**Result:** CLIENT01 successfully joined the domain and authenticated against Active Directory. During the first login, the account was required to change its password, confirming that the password policy configured earlier in the lab was being enforced correctly.
+
+**What I learned:** A successful domain join depends on several services working together. The client must receive valid network settings, locate the domain controller through DNS, and authenticate through Active Directory. This module helped me understand how workstations become part of a domain environment and how user authentication is managed centrally.
+
 ![Domain Join of Client01](screenshots/30-client01-domain-join.png)
-  
+![Password Reset for user](screenshots/31-password-reset.png)
