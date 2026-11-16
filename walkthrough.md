@@ -102,23 +102,23 @@ I intentionally kept DC01's address (192.168.205.10) outside the DHCP scope so i
 
 ## Module 4: Users, Groups and Departments
 
-**What I did:** I built a small fake company inside Active Directory. It has four OUs (think of them as folders): HR, Sales, IT and Groups. I made 9 users and spread them across the departments:
+**What I did:** I created four Organizational Units (OUs) in Active Directory: HR, Sales, IT, and Groups. I then created nine users and organized them into their respective departments:
 - HR: Noah Gold, Omar Silva
 - Sales: Lena Smith, Priya Nair, Ethan Brooks, Sofia Ross
 - IT: Hana Sato, Zara Ali, Marcus Rie
 
-Then I created three security groups: HR-Staff, Sales-Staff and IT-Staff. A group lets you give access to a whole department at once instead of setting it up person by person.
+I also created three security groups: HR-Staff, Sales-Staff, and IT-Staff. Security groups make it possible to assign permissions to an entire department instead of managing access for each user individually.
 
 **Two mistakes I made and fixed:**
-1. I misspelled one group as "Sales-Saff". I caught it in the list and renamed it.
-2. I mixed up the members. The Sales group had the IT people in it, and the IT group had the Sales people. The folder column in the members list showed me something was wrong, because it didn't match the group name. I fixed it by swapping the group names, and then checked each group again.
+1. I accidentally created the Sales-Staff group as Sales-Saff. After reviewing the group list, I noticed the typo and corrected it.
+2. While reviewing memberships, I realized the Sales users had been assigned to the IT group and the IT users had been assigned to the Sales group. The OU paths shown in the membership list helped me identify the issue, and I corrected the assignments before continuing.
 
-**Daily help desk tasks I practiced:**
-- **Reset a password:** I reset Lena Smith's password and set it so she has to change it at her next login.
-- **Disable an account:** I disabled Priya Nair's account (a small badge appears on her icon), then enabled it again.
-- **Move a user:** I moved Lena Smith from Sales to HR and moved her back again to her Sales Group.
+**Help Desk tasks I practiced:**
+- **Reset a password:** I reset Lena Smith's password and set it so she has to change it at her next logon.
+- **Disable an account:** Disabled Priya Nair's account and then re-enabled it.
+- **Move a user:** Moved Lena Smith from the Sales OU to the HR OU and later returned the account to its original location.
   
-**What I learned:** Moving a user to another OU doesn't change which groups they belong to. The OU is where the account lives, and groups control access, so in a real transfer you'd also change the groups.
+**What I learned:** Moving a user to a different OU does not automatically affect group memberships. OUs are primarily used for organization and policy management, while security groups are commonly used for permissions and access control. In a real user transfer, both should be reviewed.
 
 ![OU structure](screenshots/22-ou-structure.png)
 ![Security groups](screenshots/25-security-groups.png)
@@ -127,3 +127,21 @@ Then I created three security groups: HR-Staff, Sales-Staff and IT-Staff. A grou
 ![User moved to HR](screenshots/29-user-moved.png)
 
 I took a snapshot after each module so I can restore the lab if something breaks.
+
+## Module 5: Windows Client
+**What I did:** Created a Windows client workstation named CLIENT01, connected it to the lab network, and joined it to the lab.local Active Directory domain.
+
+**Why:** Most Help Desk support is performed on client devices rather than servers. Adding a workstation to the environment allowed me to test domain connectivity, user authentication, and Active Directory management from an end-user perspective.
+
+**Setup:**
+  - Computer Name: CLIENT01
+  - Network: VMnet8 (NAT)
+  - IP Assignment: DHCP
+  - Domain: lab.local
+
+**Verification:**
+  - Verified communication with the domain controller.
+  - Successfully joined CLIENT01 to the lab.local domain.
+  - Signed in using the Active Directory user account lsmith.
+  - Completed the required password change at first logon.
+  
