@@ -11,13 +11,12 @@ A virtual IT environment built in VMware Workstation to practice help desk work.
 | Server IP | 192.168.205.10 (static) |
 
 ## Module 0: Create the Server VM
-**What I did:** Created a virtual machine using Custom setup, chose "I will install the operating system later," and attached the Windows Server 2022 ISO manually.
+**What I did:** Created a Window Server 2022 virtual machine in VMware Workstation using a custom setup and manual attachment of the installation image.
+**Why:** Custom setup allows full control over the virtual hardware and installation, therefore, troubleshooting is made easy for the user.
 
-**Why:** Easy Install can fail when the ISO and the guest OS settings don't match. Custom setup gives full control.
+**Settings:** 2 cores, 4 GB RAM, 60 GB Virtual disk, NAT network, BIOS firmware.
 
-**Settings:** 2 cores, 4 GB RAM, 60 GB disk, NAT network, BIOS firmware.
-
-**Result:** The installer listed Windows Server 2022 editions, which confirmed the ISO was genuine. I installed Standard (Desktop Experience), then VMware Tools.
+**Outcomes:** Successful installation of Windows Server 2022 Standard with Desktop experience. VMware tools installation helped to enhance the performace.
 
 ![Install later option](screenshots/virtualmachine1.png)
 ![Guest operating system](screenshots/virtualmachine2-operating.png)
