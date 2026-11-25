@@ -151,3 +151,34 @@ I took a snapshot after each module so I can restore the lab if something breaks
 
 ![Domain Join of Client01](screenshots/30-client01-domain-join.png)
 ![Password Reset for user](screenshots/31-password-reset.png)
+
+## Module 6: Shared Folders and Permissions
+**What I did:** I created shared folder on DC01 for HR, Sales and IT. Then I configured access using the Active Directory security groups created earlier in the lab.
+
+**Why:** Shared folders are commonly used in business environments to store department-specific files. Using security groups to control access makes permission management easier and more scalable than assigning permissions to individual users.
+
+**Setup:**
+Created the following folders:
+  - C:\Shares\HR
+  -  C:\Shares\Sales
+  -   C:\Shares\IT
+Shared each folder on the network.
+Assigned permission to the corresponding departments groups:
+  - HR = HR-Staff
+  - Sales = Sales-Staff
+  - IT = IT-Staff
+
+**Verification:**
+- Logged into Client01 as lsmith (Sales department staff)
+- Successfully accessed the Sales shared folder.
+
+- Attempted to access the HR shared folder, access was denied because the account was not a member of the HR-Staff group.
+
+**Result:** Group-based access control worked as expected. Sales users were able to access Sales resources while being prevented from accessing files belonging to other departments.
+
+**What I learned:** Shared folder permissions and Active Directory security groups work together to control access to resources. This approach is easier to manage than assigning permissions directly to individual users and reflects how access is commonly managed in business environments.
+
+![Department shared folders created on DC01.](30-department-shares-created.png)
+![Shared folder permission assigned using Active Directory security groups](31-share-permissions-configured.png)
+![Sales user successfully accessing the Sales shared folder from Client01.](34-sales-access-success.png)
+![Sales user denied access to the HR shared folder because of group-based permissions.](35-hr-access-denied.png)
