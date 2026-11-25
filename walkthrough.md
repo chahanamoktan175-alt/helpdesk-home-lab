@@ -178,7 +178,7 @@ Assigned permission to the corresponding departments groups:
 
 **What I learned:** Shared folder permissions and Active Directory security groups work together to control access to resources. This approach is easier to manage than assigning permissions directly to individual users and reflects how access is commonly managed in business environments.
 
-![Department shared folders created on DC01.](30-department-shares-created.png)
-![Shared folder permission assigned using Active Directory security groups](31-share-permissions-configured.png)
-![Sales user successfully accessing the Sales shared folder from Client01.](34-sales-access-success.png)
-![Sales user denied access to the HR shared folder because of group-based permissions.](35-hr-access-denied.png)
+<img width="1920" height="1027" alt="30-department-shares-created" src="https://github.com/user-attachments/assets/c2c1420e-759c-4f0b-af9e-06c393937eb7" />
+<img width="1920" height="1027" alt="31-share-permissions-configured" src="https://github.com/user-attachments/assets/58fe64a9-fbaf-4501-ace4-3de68946ec0f" />
+<img width="1920" height="1027" alt="34-sales-access-success" src="https://github.com/user-attachments/assets/91f5d626-9e4a-4095-b749-981bce3eb23f" />
+<img width="1920" height="1027" alt="35-hr-access-denied" src="https://github.com/user-attachments/assets/d5cfdb5d-2ba0-48a3-8765-a1120b88636f" />
